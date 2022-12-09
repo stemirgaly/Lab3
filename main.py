@@ -11,17 +11,24 @@ def init():
     user_handlers = UserHandlers(services=user_services)
 
     while True:
-        command = input('Enter command or enter q (quit) to exit: ')
+        print(f'1. Создание пользователя')
+        print(f'2. Выбрать пользователя')
+        print(f'0. Выйти')
+        print(f'0')
 
-        if command == 'q':
+        command = input('Enter command: ')
+
+        if command == '0':
             sys.exit(0)
 
-        if command == 'sign_up':
-            username, password = input('Enter username and password: ').split()
+        if command == '1':
+            Surname, Name, password = input('Enter Surname, Name and password: ').split()
+            username= Surname+ " " + Name
             user_handlers.sign_up(username=username, password=password)
 
-        elif command == 'sign_in':
-            username, password = input('Please, enter your creds: ').split()
+        elif command == '2':
+            Surname, Name , password = input('Please, enter your Surname, Name and password: ').split()
+            username= Surname + " " + Name
             user_handlers.sign_in(username=username, password=password)
 
         else:
