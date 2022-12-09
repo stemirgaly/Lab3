@@ -1,7 +1,9 @@
 from typing import Optional
 
 from users.models import User
+from users.models import Wallet
 from users.services import UserServices
+from users.services import BankServices
 
 
 class UserHandlers:
@@ -40,3 +42,18 @@ class UserHandlers:
             return False
 
         return True
+
+class BankAccountHandlers:
+    services = BankServices
+
+    def __init__(self, services):
+        self.services = services
+
+    def add_to_BankAccount(self, n: int) -> None:
+        self.add_to_BankAccount(n=n)
+
+    def substract_from_BankAccount(self, n: int) -> None:
+        self.substract_from_BankAccount(n=n)
+
+    def __repr__(self):
+        return BankServices

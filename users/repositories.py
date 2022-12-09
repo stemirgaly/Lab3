@@ -1,6 +1,7 @@
 from typing import List, Optional
 
 from users.models import User
+from users.models import Wallet
 
 
 class UserRepositories:
@@ -19,7 +20,18 @@ class UserRepositories:
         )
 
         if not user:
-            print('User not found')
-            return
+            return 'User not found'
+
 
         return user
+class BankRepositories:
+
+
+    def add_to_BankAccount(self, n: int) -> None:
+        self.add_to_BankAccount(n=n)
+
+    def substract_from_BankAccount(self, n: int) -> None:
+        self.substract_from_BankAccount(n=n)
+
+    def __repr__(self):
+        return Wallet

@@ -10,17 +10,28 @@ class WalletType(Enum):
 
 
 class Wallet:
-    cash_amount: int
+    cash_amount: int = 0
     wallet_type: WalletType
 
     def __init__(self, wallet_type: WalletType):
         self.wallet_type = wallet_type
 
+    def add_to_BankAccount(self, n: int):
+        self.cash_amount += n
+
+    def substract_from_BankAccount(self, n: int):
+        self.cash_amount -= n
+
+    def __repr__(self):
+        return f'Текущий счет {self.cash_amount}'
+
 
 class User:
+    Surname: str
+    Name: str
     username: str
     __password: str
-    wallets: List[Wallet]
+    account: List[Wallet]
 
     def __init__(self, username: str):
         self.username = username
